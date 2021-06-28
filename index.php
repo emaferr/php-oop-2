@@ -1,4 +1,41 @@
 <?php
+
+class User 
+{
+    protected $userName;
+    protected $password;
+    protected $email;
+    public function __construct(string $userName, string $password, string $email)
+    {
+        $this->userName = $userName;
+        $this->password = $password;
+        $this->email = $email;
+        // $this->creditCard = $creditCard;
+    }
+}
+
+class Vip extends User {
+    function __construct(string $userName, string $password, string $email, string $creditCard = null) 
+    {
+        parent::__construct($userName, $password, $email);
+        $this->creditCard = $$creditCard;
+    }
+}
+
+$users = [
+    new User ('Emanuele', 'ABC.123BBZxP', 'emanuele@example.net'),
+    new User ('Tiziano', 'B6tx.Mm89frE', 'tiziano@example.com'),
+    new User ('Fabiola', 'N78H.Bhy66.9', 'fabiola@example.it'),
+];
+
+$usersVip = [
+    new Vip ('Alessandro', 'VgY.K99oi0rF', 'alessandro@example.it'),
+];
+
+var_dump($usersVip);
+
+var_dump($users);
+
 class Product
 {
     protected $path;
@@ -35,12 +72,10 @@ class Tablet extends Notebook {
 
 
 $notebook = [
-
     new Notebook ('https://', 'Apple MacBook Air M1', '8GB Ram', 1439.50, null, 14),
     new Notebook ('https://', 'Asus Rog Zephyrus', '16GB Ram', 1439.50, null, 16),
     new Notebook ('https://', 'Lenovo IdeaPad', '12GB Ram', 980.00, null, 15),
     new Notebook ('https://', 'Acer aspire v-nitro', '24GB Ram', 1016.32, null, 15),
-    
 ];
 
 var_dump($notebook);
