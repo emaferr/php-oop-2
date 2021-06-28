@@ -1,26 +1,10 @@
 <?php
 
-class User 
-{
-    protected $userName;
-    protected $password;
-    protected $email;
-    public function __construct(string $userName, string $password, string $email)
-    {
-        $this->userName = $userName;
-        $this->password = $password;
-        $this->email = $email;
-        // $this->creditCard = $creditCard;
-    }
-}
-
-class Vip extends User {
-    function __construct(string $userName, string $password, string $email, string $creditCard = null) 
-    {
-        parent::__construct($userName, $password, $email);
-        $this->creditCard = $$creditCard;
-    }
-}
+require __DIR__ . '/classes/User.php';
+require __DIR__ . '/classes/Vip.php';
+require __DIR__ . '/classes/Product.php';
+require __DIR__ . '/classes/Notebook.php';
+require __DIR__ . '/classes/Tablet.php';
 
 $users = [
     new User ('Emanuele', 'ABC.123BBZxP', 'emanuele@example.net'),
@@ -29,47 +13,8 @@ $users = [
 ];
 
 $usersVip = [
-    new Vip ('Alessandro', 'VgY.K99oi0rF', 'alessandro@example.it'),
+    new Vip ('Alessandro', 'VgY.K99oi0rF', 'alessandro@example.it', 'ALSNDR'),
 ];
-
-var_dump($usersVip);
-
-var_dump($users);
-
-class Product
-{
-    protected $path;
-    protected $name;
-    protected $desc;
-    protected $price;
-    protected $discount;
-    public function __construct(string $path, string $name, string $desc, float $price, int $discount = null)
-    {
-        $this->path = $path;
-        $this->name = $name;
-        $this->desc = $desc;
-        $this->price = $price;
-        $this->discount = $discount;
-    }
- 
-}
-
-class Notebook extends Product {
-    function __construct(string $path, string $name, string $desc, float $price, int $discount = null, int $diagonal) 
-    {
-        parent::__construct($path, $name, $desc, $price, $discount);
-        $this->diagonal = $diagonal;
-    }
-}
-
-class Tablet extends Notebook {
-    function __construct(string $path, string $name, string $desc, float $price, int $discount = null, int $diagonal, string $connect) 
-    {
-        parent::__construct($path, $name, $desc, $price, $discount, $diagonal);
-        $this->connect = $connect;
-    }
-}
-
 
 $notebook = [
     new Notebook ('https://', 'Apple MacBook Air M1', '8GB Ram', 1439.50, null, 14),
@@ -78,7 +23,7 @@ $notebook = [
     new Notebook ('https://', 'Acer aspire v-nitro', '24GB Ram', 1016.32, null, 15),
 ];
 
-var_dump($notebook);
+
 
 $tablet = [
     new Tablet ('https://', 'Apple Ipad Air', '4GB Ram', 439.50, null, 7, '4G LTE'),
@@ -86,6 +31,9 @@ $tablet = [
     new Tablet ('https://', 'Mediacom Pad X', '4GB Ram', 239.50, null, 7, 'Wi-Fi'),
 ];
 
+var_dump($users);
+var_dump($usersVip);
+var_dump($notebook);
 var_dump($tablet);
 
 ?>
