@@ -5,4 +5,9 @@ class Vip extends User {
         parent::__construct($userName, $password, $email);
         $this->vipCode = $vipCode;
     }
+
+    // public function getVipCode(){
+    //     return $this->vipCode;
+    // }
+
 }

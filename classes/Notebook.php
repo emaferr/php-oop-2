@@ -5,4 +5,5 @@ class Notebook extends Product {
         parent::__construct($path, $name, $desc, $price, $discount);
         $this->diagonal = $diagonal;
     }
+
 }

@@ -29,11 +29,12 @@ $tablet = [
     new Tablet ('https://', 'Mediacom Pad X', '4GB Ram', 239.50, null, 7, 'Wi-Fi'),
 ];
 
+
 // var_dump($users);
 // var_dump($usersVip);
 // var_dump($notebook);
 // var_dump($tablet);
-
+ 
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +67,7 @@ $tablet = [
     <main>
 
         <div class="container">
+            <h2>Notebook</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
                 <?php foreach ($notebook as $item) : ?> 
                 <div class="col">
@@ -78,6 +80,25 @@ $tablet = [
                             <p class="card-text"><?= $item->getDesc(); ?></p>
                             <h6 class="card-text"><?= $item->diagonal; ?></h6>
                             <h6 class="card-text"><?= $item->getPrice(); ?></h6>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach ?>
+            </div>
+            <h2>Tablet</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                <?php foreach ($tablet as $item) : ?> 
+                <div class="col">
+                    <div class="card">
+                        <div class="notebook_img">
+                            <img src="<?= $item->getPath(); ?>" class="card-img-top p-3" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $item->getName(); ?></h5>
+                            <p class="card-text"><?= $item->getDesc(); ?></p>
+                            <h6 class="card-text"><?= $item->diagonal; ?></h6>
+                            <h6 class="card-text"><?= $item->getPrice(); ?></h6>
+                            <h6 class="card-text"><?= $item->connect; ?></h6>
                         </div>
                     </div>
                 </div>
