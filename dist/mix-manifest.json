@@ -1,4 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/img/acer.jpeg": "/img/acer.jpeg",
+    "/img/asus.jpeg": "/img/asus.jpeg",
+    "/img/lenovo.jpeg": "/img/lenovo.jpeg",
+    "/img/macbook.jpeg": "/img/macbook.jpeg"
 }

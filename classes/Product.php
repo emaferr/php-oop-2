@@ -14,5 +14,10 @@ class Product
         $this->price = $price;
         $this->discount = $discount;
     }
+
+    public function getPath(){return $this->path;}
+    public function getName(){return $this->name;}
+    public function getDesc(){return $this->desc;}
+    public function getPrice(){return $this->price;}
  
 }
